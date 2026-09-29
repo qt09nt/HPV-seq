@@ -1,2 +1,10 @@
-fastq files are here:
+#fastq files are here on Laurelin:
 /mnt/clinical/rawsequencedata/rawsequencedata/pmrun/2026/260804_NS500209_0529_AHGV5TBGY2/Data/Intensities/BaseCalls/Unaligned/PMH26-067
+
+#transfer fastq files from Laurelin to H4H:
+salloc -p clinical -t 10:00:00 --mem=8g
+ssh qtsang@h4huhndata1
+cd /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/fastq
+scp laurelin.uhnresearch.ca:/mnt/clinical/rawsequencedata/rawsequencedata/pmrun/2026/260804_NS500209_0529_AHGV5TBGY2/Data/Intensities/BaseCalls/Unaligned/PMH26-067/*.fastq.gz .
+
+
