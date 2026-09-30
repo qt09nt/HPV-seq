@@ -10,3 +10,16 @@ scp laurelin.uhnresearch.ca:/mnt/clinical/rawsequencedata/rawsequencedata/pmrun/
 #Nextflow requires Java 11 or later
 module load java/21
 
+#no internet on the compute nodes, only on the login node
+[qtsang@h4huhnlogin2 ~]$ curl -s https://get.nextflow.io | bash
+
+      N E X T F L O W
+      version 26.04.6 build 12646
+      created 09-07-2026 18:49 UTC (14:49 EDT)
+      cite doi:10.1038/nbt.3820
+      http://nextflow.io
+
+
+Nextflow installation completed. Please note:
+- the executable file `nextflow` has been created in the folder: /cluster/home/qtsang
+- you may complete the installation by moving it to a directory in your $PATH
