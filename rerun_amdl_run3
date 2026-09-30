@@ -44,3 +44,11 @@ scp i7_i5revcomp qtsang@h4huhndata1.uhnresearch.ca:/cluster/projects/uhnclg/HPV-
 nextflow run nf-core/demo -profile test,singularity --outdir results
 
 https://nf-co.re/docs/running/tutorials/configure-a-pipeline-run/
+
+nextflow run bratmanlab/hpvseq/main.nf \
+   -profile <hpc/../docker/singularity/.../institute> \
+   -c hpvseq.config -c hpcgenomes.config \
+   -params-file cohort.yml ## input, outdir, ...
+
+/cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/
+nextflow run /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/main.nf -profile singularity -c /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/conf/hpcgenomes.config.txt -c /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/hpvseq.config.txt -params-file /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/params_AMDL_run3_repeat_analysis.yml
