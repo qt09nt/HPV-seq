@@ -23,3 +23,9 @@ module load java/21
 Nextflow installation completed. Please note:
 - the executable file `nextflow` has been created in the folder: /cluster/home/qtsang
 - you may complete the installation by moving it to a directory in your $PATH
+
+[qtsang@node47 HPV-seq]$ echo $HOME
+/cluster/home/qtsang
+
+mkdir -p $HOME/.local/bin/
+mv nextflow $HOME/.local/bin/
