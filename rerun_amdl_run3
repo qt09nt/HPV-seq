@@ -34,5 +34,9 @@ mv nextflow $HOME/.local/bin/
 #Verify the installation:
 nextflow info
 
+
 #to send data from local computer to H4H HPV-seq folder:
+cd /Users/queenietsang/desktop/HPV-seq/files_to_Greg/AMDL_run3
 scp i7_i5revcomp qtsang@h4huhndata1.uhnresearch.ca:/cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat
+
+module load singularity/4.3.2
