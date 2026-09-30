@@ -43,3 +43,4 @@ scp i7_i5revcomp qtsang@h4huhndata1.uhnresearch.ca:/cluster/projects/uhnclg/HPV-
 #to run the NF-core demo pipeline, have to exit compute node and go into h4huhnlogin2 node which has internet access:
 nextflow run nf-core/demo -profile test,singularity --outdir results
 
+https://nf-co.re/docs/running/tutorials/configure-a-pipeline-run/
