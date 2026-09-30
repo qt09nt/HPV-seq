@@ -27,5 +27,9 @@ Nextflow installation completed. Please note:
 [qtsang@node47 HPV-seq]$ echo $HOME
 /cluster/home/qtsang
 
+#Move Nextflow to a directory in your $PATH:
 mkdir -p $HOME/.local/bin/
 mv nextflow $HOME/.local/bin/
+
+#Verify the installation:
+nextflow info
