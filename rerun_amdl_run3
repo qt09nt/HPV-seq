@@ -102,3 +102,4 @@ https://www.anaconda.com/docs/getting-started/miniconda/install/linux-install#ho
 environment location: /cluster/home/qtsang/miniconda3
 cd /cluster/projects/uhnclg/HPV-seq/
 environment location: /cluster/home/qtsang/miniconda3/envs/nextflow_env
+
