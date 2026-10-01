@@ -59,3 +59,11 @@ curl: (28) Failed to connect to www.nextflow.io port 443: Connection timed out
  N E X T F L O W   ~  version 26.04.6
 Unknown configuration profile: 'singularity'
 
+#Configure a pipeline run tutorial 
+https://nf-co.re/docs/running/tutorials/configure-a-pipeline-run/
+
+#try using H4H data node for both internet access and access to cluster/projects folders: ie. /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/
+ssh h4huhndata1
+#when logged into data node, can't load singularity or java with module load 
+#-bash: module: command not found
+
