@@ -84,3 +84,9 @@ Cannot find script file: /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipe
 [qtsang@h4huhnlogin2 HPV-seq_pipeline]$ nextflow run /cluster/home/qtsang/HPV-seq_pipeline/main.nf -profile singularity -c /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/conf/hpcgenomes.config.txt -c /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/conf/hpvseq.config.txt -params-file /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/params_AMDL_run3_repeat_analysis.yml
  N E X T F L O W   ~  version 26.04.6
 Specified params file does not exist: /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/params_AMDL_run3_repeat_analysis.yml
+
+#### Try Standalone distribution
+#For offline or restricted environments, you can download a pre-built executable from the Nextflow GitHub releases.
+#To use the standalone distribution:
+mv nextflow-25.10.8-dist $HOME/.local/bin/
+nextflow-25.10.8-dist info
