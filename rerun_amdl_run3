@@ -97,3 +97,6 @@ nextflow-25.10.8-dist info
 ### installing Miniconda since Jinfeng's script requires conda
 https://www.anaconda.com/download/success?reg=skipped-miniconda
 https://www.anaconda.com/docs/getting-started/miniconda/install/linux-install#how-do-i-verify-my-installers-integrity
+
+#installed Miniconda
+environment location: /cluster/home/qtsang/miniconda3
