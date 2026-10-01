@@ -90,3 +90,5 @@ Specified params file does not exist: /cluster/projects/uhnclg/HPV-seq/AMDL_run3
 #To use the standalone distribution:
 mv nextflow-25.10.8-dist $HOME/.local/bin/
 nextflow-25.10.8-dist info
+
+[qtsang@node47 HPV-seq]$ nextflow-25.10.8-dist run /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/main.nf -profile singularity -c /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/conf/hpcgenomes.config.txt -c /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/conf/hpvseq.config.txt -params-file /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/params_AMDL_run3_repeat_analysis.yml
