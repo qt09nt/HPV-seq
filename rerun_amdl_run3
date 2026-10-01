@@ -75,7 +75,10 @@ curl: (28) Failed to connect to www.nextflow.io port 443: Connection timed out
  N E X T F L O W   ~  version 26.04.6
 Unknown configuration profile: 'singularity'
 
-
+#when running on login node:
 [qtsang@h4huhnlogin2 ~]$ nextflow run /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/main.nf -profile singularity -c /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/conf/hpcgenomes.config.txt -c /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/conf/hpvseq.config.txt -params-file /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/params_AMDL_run3_repeat_analysis.yml
  N E X T F L O W   ~  version 26.04.6
 Cannot find script file: /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/main.nf
+
+#try running on login node:
+
