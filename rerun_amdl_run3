@@ -103,3 +103,8 @@ environment location: /cluster/home/qtsang/miniconda3
 cd /cluster/projects/uhnclg/HPV-seq/
 environment location: /cluster/home/qtsang/miniconda3/envs/nextflow_env
 
+#downloaded config files from https://github.com/bratmanlab/hpvseq/tree/master/conf
+#rename all the configuration files in /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/conf from .config.txt to .config
+(base) [qtsang@node47 conf]$ for file in *.config.txt; do
+    mv "$file" "${file%.txt}"
+done
