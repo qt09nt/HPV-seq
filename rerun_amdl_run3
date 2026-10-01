@@ -108,3 +108,6 @@ environment location: /cluster/home/qtsang/miniconda3/envs/nextflow_env
 (base) [qtsang@node47 conf]$ for file in *.config.txt; do
     mv "$file" "${file%.txt}"
 done
+
+cd /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat
+sbatch AMDL_run3_analysis_repeat.sh 
