@@ -148,3 +148,49 @@ ERROR ~ Script compilation failed
                 return [ meta_map ] + [ fq1, fq2 ].findAll()
             }
         }
+
+#Error with /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/modules/local/consensuscruncher/main.nf:
+Oct-02 13:35:02.915 [main] ERROR nextflow.cli.Launcher - Script compilation failed
+nextflow.exception.ScriptCompilationException: Script compilation failed
+        at nextflow.script.parser.v2.ScriptLoaderV2.parse0(ScriptLoaderV2.groovy:129)
+        at nextflow.script.parser.v2.ScriptLoaderV2.parse(ScriptLoaderV2.groovy:81)
+        at nextflow.script.parser.v2.ScriptLoaderV2.parse(ScriptLoaderV2.groovy)
+        at nextflow.script.ScriptRunner.parseScript(ScriptRunner.groovy:215)
+        at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:126)
+        at nextflow.cli.CmdRun.run(CmdRun.groovy:442)
+        at nextflow.cli.Launcher.run(Launcher.groovy:526)
+        at nextflow.cli.Launcher.main(Launcher.groovy:686)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+_nf_script_1b4bc5dadbecae7c: 7: Invalid process directive @ line 7, column 5.
+       def retryCodes = (130..145) + [104, 175]
+       ^
+
+#originally:
+process CONSENSUSCRUNCHER {
+    tag "${meta.id}_CONSENSUSCRUNCHER"
+    label 'process_higher'
+
+    //maxRetries    = 3
+    maxRetries 3
+    def retryCodes = (130..145) + [104, 175]
+    errorStrategy {
+        // Retry scheduler/resource failures
+        if( task.exitStatus in retryCodes )
+            return 'retry'
+
+## changed to:
+// Declare the variable globally or outside the process block
+def retryCodes = (130..145) + [104, 175]
+
+process CONSENSUSCRUNCHER {
+    tag "${meta.id}_CONSENSUSCRUNCHER"
+    label 'process_higher'
+
+    //maxRetries    = 3
+    maxRetries 3
+    //def retryCodes = (130..145) + [104, 175]
+    errorStrategy {
+        // Retry scheduler/resource failures
+        if( task.exitStatus in retryCodes )
+            return 'retry'
+
