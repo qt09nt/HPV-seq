@@ -111,3 +111,11 @@ done
 
 cd /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat
 sbatch AMDL_run3_analysis_repeat.sh 
+
+to fix the nf-schema error: 
+vim /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/nextflow.config
+#need to change to nf-schema@2.7.2 in Nextflow plugins section of nextflow.config file:
+// Nextflow plugins
+plugins {
+    id 'nf-schema@2.7.2' // Validation of pipeline parameters and creation of an input channel from a sample sheet
+}
