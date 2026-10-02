@@ -119,3 +119,14 @@ vim /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/nextflow.config
 plugins {
     id 'nf-schema@2.7.2' // Validation of pipeline parameters and creation of an input channel from a sample sheet
 }
+
+
+ vim slurm.AMDL_run3_analysis_repeat.sh.7768249.out
+^[[K
+^[[1A^[[K^[[0;31mError^[[0;1m subworkflows/local/utils_nfcore_hpvseq_pipeline/main.nf^[[m:160:74: Unexpected input: ^[[36m'*'^[[39m
+^[[31m│^[[m ^[[34m160 | ^[[0;2mne, single_end: single_end ], ^[[0;31m*^[[0;2m[ fq1, fq2 ].findAll() ]^[[m
+^[[31m╰^[[m     | ^[[31;1m                              ^^[[m
+^[[39m
+ERROR ~ Script compilation failed
+
+#trying to fix compilation error in /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/subworkflows/local/utils_nfcore_hpvseq_pipeline/main.nf
