@@ -194,3 +194,12 @@ process CONSENSUSCRUNCHER {
         if( task.exitStatus in retryCodes )
             return 'retry'
 
+#Error with /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/subworkflows/local/align_bwa:
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+_nf_script_cde253cbba481f11: 38: `reads` is already declared @ line 38, column 18.
+       .map { meta, reads, meta2, index, fasta, fai ->
+                    ^
+^[[1A^[[K^[[0;31mError^[[0;1m subworkflows/local/align_bwa/main.nf^[[m:38:18: ^[[36m`reads`^[[39m is already declared
+^[[31m│^[[m ^[[34m 38 | ^[[0;2m    .map { meta, ^[[0;31mreads^[[0;2m, meta2, index, fasta, fai ->^[[m
+^[[31m╰^[[m     | ^[[31;1m                 ^^^^^^[[m
+
