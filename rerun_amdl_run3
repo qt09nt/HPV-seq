@@ -130,3 +130,21 @@ plugins {
 ERROR ~ Script compilation failed
 
 #trying to fix compilation error in /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/subworkflows/local/utils_nfcore_hpvseq_pipeline/main.nf
+#originally:
+// Scenario B: FASTQ Input (3 items: meta + fq1 + fq2)
+            else {
+                def single_end = fq2 ? false : true
+                return [ meta + [ is_sra: false, lane: lane, single_end: single_end ], *[ fq1, fq2 ].findAll() ]
+            }
+        }
+
+#changed to this:
+// Scenario B: FASTQ Input (3 items: meta + fq1 + fq2)
+            else {
+                def single_end = fq2 ? false : true
+                def meta_map = meta + [ is_sra: false, lane: lane, single_end: single_end ]
+                //return [ meta + [ is_sra: false, lane: lane, single_end: single_end ], *[ fq1, fq2 ].findAll() ]
+                //Dynamically builds the output array cleanly
+                return [ meta_map ] + [ fq1, fq2 ].findAll()
+            }
+        }
