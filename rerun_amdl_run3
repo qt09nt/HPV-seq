@@ -249,3 +249,4 @@ WARN: Nextflow environment variables must be defined in the launch environment -
 #so now I'm removing these lines again from the nextflow.config file
 
 ## try saving the file from the HTTPS request (https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0) into a singularity_cache folder:
+rsync fastqc-0.12.1--hdfd78af_0 qtsang@h4huhndata1.uhnresearch.ca:/cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/singularity_cache
