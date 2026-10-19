@@ -250,3 +250,16 @@ WARN: Nextflow environment variables must be defined in the launch environment -
 
 ## try saving the file from the HTTPS request (https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0) into a singularity_cache folder:
 rsync fastqc-0.12.1--hdfd78af_0 qtsang@h4huhndata1.uhnresearch.ca:/cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/singularity_cache
+
+#Add this directory to your nextflow.config file:nextflow line 168 in /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/nextflow.config 
+singularity {
+        singularity.enabled     = true
+        singularity.autoMounts  = true
+        conda.enabled           = false
+        docker.enabled          = false
+        podman.enabled          = false
+        shifter.enabled         = false
+        charliecloud.enabled    = false
+        apptainer.enabled       = false
+        cacheDir = '/cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/singularity_cache'
+    }
