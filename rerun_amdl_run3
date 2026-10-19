@@ -203,3 +203,28 @@ _nf_script_cde253cbba481f11: 38: `reads` is already declared @ line 38, column 1
 ^[[31m│^[[m ^[[34m 38 | ^[[0;2m    .map { meta, ^[[0;31mreads^[[0;2m, meta2, index, fasta, fai ->^[[m
 ^[[31m╰^[[m     | ^[[31;1m                 ^^^^^^[[m
 
+#### Error with Singularity - /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/slurm_logs/slurm.AMDL_run3_analysis_repeat.sh.7931435.out
+Pulling Singularity image https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0 [cache /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/work/singularity/depot.galaxyproject.org-singularity-fastqc-0.12.1--hdfd78af_0.img]
+Pulling Singularity image https://community-cr-prod.seqera.io/docker/registry/v2/blobs/sha256/52/52ccce28d2ab928ab862e25aae26314d69c8e38bd41ca9431c67ef05221348aa/data [cache /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/work/singularity/community-cr-prod.seqera.io-docker-registry-v2-blobs-sha256-52-52ccce28d2ab928ab862e25aae26314d69c8e38bd41ca9431c67ef05221348aa-data.img]
+-[bratmanlab/hpvseq] Pipeline completed with errors-
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/work/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+ERROR ~ Error executing process > 'HPVSEQ:FASTQC (1)'
+
+Caused by:
+  Failed to pull singularity image
+    command: singularity pull  --name depot.galaxyproject.org-singularity-fastqc-0.12.1--hdfd78af_0.img.pulling.1792418801585 https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0 > /dev/null
+    status : 255
+    hint   : Try and increase singularity.pullTimeout in the config (current is "20m")
+    message:
+      FATAL:   Error making http request: Head "https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0": dial tcp 128.118.250.14:443: i/o timeout
+
+## to try to fix this Singularity error:
+#added pullTimeout = '1h' to the Singularity parameter in line 168 and line 271 "NXF_HTTP_TIMEOUT = '1h'" in /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/nextflow.config
+env {
+    PYTHONNOUSERSITE = 1
+    R_PROFILE_USER   = "/.Rprofile"
+    R_ENVIRON_USER   = "/.Renviron"
+    JULIA_DEPOT_PATH = "/usr/local/share/julia"
+    // Increase general network download timeout
+    NXF_HTTP_TIMEOUT = '1h'
+}
