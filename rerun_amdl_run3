@@ -242,3 +242,8 @@ env {
     // Increase general network download timeout
     NXF_HTTP_TIMEOUT = '1h'
 }
+
+## now in the next /cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/slurm_logs/slurm.AMDL_run3_analysis_repeat.sh.7932861.out file:
+WARN: Unrecognized config option 'pullTimeout'
+WARN: Nextflow environment variables must be defined in the launch environment -- the following environment variable in the config will be ignored: 'NXF_HTTP_TIMEOUT'
+#so now I'm removing these lines again from the nextflow.config file
