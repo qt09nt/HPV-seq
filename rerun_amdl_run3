@@ -218,8 +218,22 @@ Caused by:
     message:
       FATAL:   Error making http request: Head "https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0": dial tcp 128.118.250.14:443: i/o timeout
 
-## to try to fix this Singularity error:
+## to try to fix this Singularity error by increasing timeouts in the nextflow config file
+#Add or modify the timeout settings in your nextflow.config file. You can set these to a higher threshold like 1h (1 hour) 
 #added pullTimeout = '1h' to the Singularity parameter in line 168 and line 271 "NXF_HTTP_TIMEOUT = '1h'" in /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/nextflow.config
+#line 168:
+singularity {
+        singularity.enabled     = true
+        singularity.autoMounts  = true
+        conda.enabled           = false
+        docker.enabled          = false
+        podman.enabled          = false
+        shifter.enabled         = false
+        charliecloud.enabled    = false
+        apptainer.enabled       = false
+        pullTimeout = '1h'
+    }
+#line 271:
 env {
     PYTHONNOUSERSITE = 1
     R_PROFILE_USER   = "/.Rprofile"
