@@ -264,3 +264,13 @@ singularity {
         apptainer.enabled       = false
         cacheDir = '/cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/singularity_cache'
     }
+
+# Get Nextflow version:
+download locally from https://github.com/nextflow-io/nextflow/releases/download/v25.10.4/nextflow-25.10.4-dist
+rsync nextflow-25.10.4-dist qtsang@h4huhndata1.uhnresearch.ca:/cluster/home/qtsang
+echo 'export NXF_VER=25.10.4' >> ~/.bashrc
+source ~/.bashrc
+nextflow -v
+nextflow version 25.10.4.11173
+
+
