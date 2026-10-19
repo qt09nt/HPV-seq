@@ -247,3 +247,5 @@ env {
 WARN: Unrecognized config option 'pullTimeout'
 WARN: Nextflow environment variables must be defined in the launch environment -- the following environment variable in the config will be ignored: 'NXF_HTTP_TIMEOUT'
 #so now I'm removing these lines again from the nextflow.config file
+
+## try saving the file from the HTTPS request (https://depot.galaxyproject.org/singularity/fastqc:0.12.1--hdfd78af_0) into a singularity_cache folder:
