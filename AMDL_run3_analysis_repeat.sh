@@ -27,3 +27,8 @@ yml_cohort=/cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/params_AMD
 nextflow run $hpvseqdir/main.nf -profile singularity -c $hpvseqdir/conf/hpvseq.config -c $hpvseqdir/conf/hpcgenomes.config -params-file $yml_cohort -resume
 # -ansi-log false 
 ~                  
+#command.sh: line 5: fastp: command not found^[[
+#to resolve this, go on the login node on H4H which has internet access
+#activate conda environment
+conda activate nextflow_env
+conda install -c bioconda fastp
