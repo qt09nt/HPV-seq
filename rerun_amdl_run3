@@ -286,3 +286,6 @@ python3 /cluster/home/jfzou/ConsensusCruncher3/ConsensusCruncher/extract_barcode
 gzip CD-SE23-0799_2906-EarlyRT-PLA_HPV-SEQ_S10_barcode_R1.fastq
 gzip CD-SE23-0799_2906-EarlyRT-PLA_HPV-SEQ_S10_barcode_R2.fastq
 
+The path to the ConsensusCruncher Code Directory has to be added to the /cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/ConsensusCruncher3/generate_scripts.sh ConsensusCruncher script:
+CODEDIR="/cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/ConsensusCruncher3" # ConsensusCruncher code directory
+ 
