@@ -273,4 +273,16 @@ source ~/.bashrc
 nextflow -v
 nextflow version 25.10.4.11173
 
+#find the work directory:
+/cluster/projects/uhnclg/HPV-seq/AMDL_run3_analysis_repeat/work/de/cae0d3a1b846f2ac783530533ebaed
+#view the hidden nextflow files: command.log, command.err, .command.sh
+vim .command.out
+(base) [qtsang@node51 cae0d3a1b846f2ac783530533ebaed]$ vim .command.log
+(base) [qtsang@node51 cae0d3a1b846f2ac783530533ebaed]$ vim .command.sh
+
+#in .command.sh:
+#!/usr/bin/env bash -C -e -u -o pipefail
+python3 /cluster/home/jfzou/ConsensusCruncher3/ConsensusCruncher/extract_barcodes_overlapStartswith.py --read1 CD-SE23-0799_2906-EarlyRT-PLA_HPV-SEQ_S10_R1.fastp.fastq.gz --read2 CD-SE23-0799_2906-EarlyRT-PLA_HPV-SEQ_S10_R2.fastp.fastq.gz --outfile CD-SE23-0799_2906-EarlyRT-PLA_HPV-SEQ_S10 --blist KAPA_UMIs.txt
+gzip CD-SE23-0799_2906-EarlyRT-PLA_HPV-SEQ_S10_barcode_R1.fastq
+gzip CD-SE23-0799_2906-EarlyRT-PLA_HPV-SEQ_S10_barcode_R2.fastq
 
