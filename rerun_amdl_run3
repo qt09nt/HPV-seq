@@ -293,3 +293,5 @@ CODEDIR="/cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/ConsensusCr
 #originally: 
 consensuscruncher_dir      = NULL
 consensuscruncher_dir      = '/cluster/projects/uhnclg/HPV-seq/13Jan2026/HPV-seq_pipeline/ConsensusCruncher3/ConsensusCruncher'
+#this didn't work so I've changed it back to the original: 
+consensuscruncher_dir      = NULL
